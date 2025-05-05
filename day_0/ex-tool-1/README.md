@@ -5,4 +5,5 @@ ex-tool-1: Web Server Setup on GCP
 4. Installed Python3 .
 5. Created a directory named site and added an index.html file that contains my name and a photo.
 I hosted the website on my GCP VM. You can access it using the link below:
-http://34.67.131.47:8080/
+
+http://34.45.169.83/
