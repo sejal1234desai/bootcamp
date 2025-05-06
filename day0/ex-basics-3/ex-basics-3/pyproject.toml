@@ -1,0 +1,10 @@
+[project]
+name = "sejal-hello"
+version = "0.1.1"
+description = "A Typer-based CLI app"
+authors = [{name = "Sejal Desai"}]
+dependencies = ["typer", "rich"]
+requires-python = ">=3.8"
+
+[project.scripts]
+sejal-hello = "sejal_hello.main:app"
