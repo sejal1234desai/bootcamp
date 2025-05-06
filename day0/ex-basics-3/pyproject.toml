@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "ex-basics-3"
+version = "0.1.0"
+description = "A sample project with a sejal_hello package."
+authors = ["Your Name <your.email@example.com>"]
+license = "MIT"
+readme = "README.md"
+
+# Optional: Add other metadata
+# repository = "https://github.com/yourusername/ex-basics-3"
+# homepage = "https://yourwebsite.com"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+typer = "^0.0.1"
+rich = "^14.0.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.0"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
