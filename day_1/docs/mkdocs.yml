@@ -1,0 +1,12 @@
+site_name: E-commerce Project Docs
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - Design Doc: design-doc.md
+  - Login Flow: login-flow.md
+  - Architecture Diagram: architecture.png
+  - Project Overview : project-readme.md
+  - Daily Log :daily-log.md
+  - Markdown Cheatsheet : markdown-cheatsheet.md
