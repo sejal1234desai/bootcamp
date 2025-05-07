@@ -1,0 +1,2 @@
+[console_scripts]
+mytool = mypkg.cli:main

@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+sejal_hello/main.py
+sejal_hello.egg-info/PKG-INFO
+sejal_hello.egg-info/SOURCES.txt
+sejal_hello.egg-info/dependency_links.txt
+sejal_hello.egg-info/entry_points.txt
+sejal_hello.egg-info/requires.txt
+sejal_hello.egg-info/top_level.txt
