@@ -39,13 +39,13 @@ Clone and navigate:
 
 bash
 Copy code
-git clone <repo-url>
+git clone https://github.com/sejal1234desai/bootcamp
 cd dataflow-framework/abstraction-level-8
 Set up virtual environment:
 
 bash
 Copy code
-python -m venv venv
+uv venv venv
 source venv/bin/activate  # or venv\Scripts\activate on Windows
 pip install -r requirements.txt
 🧪 Run Modes
