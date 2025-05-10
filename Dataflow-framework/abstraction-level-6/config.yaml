@@ -1,0 +1,23 @@
+
+nodes:
+  - tag: start
+    type: processors.start.StartProcessor
+    next_tags:
+      - error
+      - warn
+      - general
+  - tag: error
+    type: processors.filters.ErrorProcessor  # Correct path to the class
+    next_tags:
+      - end
+  - tag: warn
+    type: processors.filters.WarnProcessor
+    next_tags:
+      - end
+  - tag: general
+    type: processors.formatters.GeneralProcessor
+    next_tags:
+      - end
+  - tag: end
+    type: processors.output.EndProcessor
+    next_tags: []

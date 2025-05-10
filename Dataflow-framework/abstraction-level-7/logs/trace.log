@@ -1,0 +1,13 @@
+{
+  "timestamp": "2025-05-10T12:34:56Z",
+  "trace": {
+    "function": "process_request",
+    "input_params": {
+      "user_id": 123,
+      "request_data": {"item": "abc"}
+    },
+    "output": {"status": "success"},
+    "execution_time_ms": 120,
+    "error": null
+  }
+}

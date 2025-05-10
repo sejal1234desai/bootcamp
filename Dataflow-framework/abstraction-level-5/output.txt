@@ -1,0 +1,5 @@
+info: This is just a normal log
+tag_warn: Warning: disk space is low
+tag_error: Error: failed to connect to server
+info: All systems operational
+info: 

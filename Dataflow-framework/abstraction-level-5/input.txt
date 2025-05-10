@@ -1,0 +1,5 @@
+This is just a normal log
+Warning: disk space is low
+Error: failed to connect to server
+All systems operational
+

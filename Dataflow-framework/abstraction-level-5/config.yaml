@@ -1,0 +1,50 @@
+nodes:
+  trim:
+    factory: processors.trim.Trim
+    inputs: [__root__]
+
+  tag_error:
+    factory: processors.tag_error.TagError
+    inputs: [trim]
+
+  tag_warn:
+    factory: processors.tag_warn.TagWarn
+    inputs: [tag_error]
+
+  splitter:
+    factory: processors.splitter.Splitter
+    inputs: [tag_warn]
+
+  count:
+    factory: processors.count.Count
+    inputs: [splitter]
+
+  archive:
+    factory: processors.archive.Archive
+    inputs: [splitter]
+
+  tally:
+    factory: processors.tally.Tally
+    inputs: [splitter]
+
+  format:
+    factory: processors.format.Format
+    inputs: [splitter]
+
+  print:
+    factory: processors.print.Print
+    inputs: [format]
+
+routes:
+  - from: "tag_warn"
+    tag: "warnings"
+    to: "tally"
+  - from: "tag_error"
+    tag: "errors"
+    to: "archive"
+  - from: "splitter"
+    tag: "general"
+    to: "format"
+  - from: "format"
+    tag: "formatted"
+    to: "print"

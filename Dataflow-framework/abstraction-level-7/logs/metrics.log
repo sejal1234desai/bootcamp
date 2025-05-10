@@ -1,0 +1,11 @@
+{
+  "timestamp": "2025-05-10T12:34:56Z",
+  "metrics": {
+    "request_count": 500,
+    "processing_time_avg_ms": 150,
+    "error_count": 3,
+    "success_rate": 0.994,
+    "cpu_usage_percent": 75,
+    "memory_usage_mb": 2048
+  }
+}
