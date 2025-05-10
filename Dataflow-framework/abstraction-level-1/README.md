@@ -43,47 +43,4 @@ The script is still in a single file but modularized with small functions.
 
 Output goes to stdout by default unless --output is specified.
 
-📁 Level 2 - Modular Structure and Processors
-
-Description:
-This level breaks the monolithic script into reusable modules. Each processor follows a standardized function signature.
-
-Folder Structure:
-
-abstraction-level-2/
-├── main.py
-├── cli.py
-├── core.py
-├── pipeline.py
-├── types.py
-Processor Interface:
-Each processor is a function that takes a string and returns a string:
-
-python
-Copy code
-ProcessorFn = Callable[[str], str]
-Defined Processors in core.py:
-
-to_uppercase(line)
-
-to_snakecase(line)
-
-Pipeline:
-In pipeline.py, mode decides which list of processors to apply.
-
-Example Usage:
-
-bash
-Copy code
-python main.py --input input.txt --mode snakecase
-Highlights:
-
-Clear separation of concerns
-
-Easy to add new processors
-
-Logic flows: CLI ➜ Pipeline ➜ Core ➜ I/O
-
-Note:
-This is a major improvement in maintainability and structure.
 
