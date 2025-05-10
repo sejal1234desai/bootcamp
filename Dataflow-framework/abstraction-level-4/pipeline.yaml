@@ -1,0 +1,7 @@
+# pipeline.yaml
+
+pipeline:
+  - type: processors.snake.to_snakecase
+  - type: processors.line_counter.count_lines
+  - type: processors.join_pairs.join_pairs
+  - type: processors.splitter.split_lines
