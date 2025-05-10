@@ -49,20 +49,19 @@ System remains responsive even under load
 1. Clone the Repository
 bash
 Copy code
-git clone https://github.com/your-username/log-observability-system.git
+git clone https://github.com/sejal1234desai/log-observability-system.git
 cd log-observability-system
 2. Create and Activate Virtual Environment
 bash
 Copy code
-python3 -m venv venv
+uv venv venv
 source venv/bin/activate   # On Windows: venv\Scripts\activate
 3. Install Dependencies
 bash
-Copy code
 pip install fastapi uvicorn
 4. Run the System
 bash
-Copy code
+
 python run.py
 This will:
 
@@ -93,6 +92,19 @@ Copy code
   "start": 0,
   "general": 0
 }
+
+
+## 📊 Dashboard Preview
+
+### 🔧 Stats Page
+![Stats Page](img/stats_page.png)
+
+### 🔍 Trace Page
+![Trace Page](img/trace_page.png)
+
+### ❗ Error Page
+![Error Page](img/error_page.png)
+
 💡 Design Philosophy
 This project is inspired by real-world systems like:
 
