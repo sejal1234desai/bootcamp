@@ -137,7 +137,7 @@ You’ve implemented a functional file-processing system that includes:
 
 
 📸 Dashboard Output
-🧩Output -[ output_page.png]
+🧩Output -[ /output_page.png]
 
 🧩 Design Overview
 Processing Logic: file_processor.py handles core operations.
