@@ -1,33 +1,58 @@
-Level 6 – State-Based Routing System
-In this level, the pipeline is no longer linear or defined by a DAG. Instead, routing is determined dynamically using tags that each line carries.
+🧩 Level 6 – State-Based Routing System
+Welcome to Level 6 of the processing engine series. This level builds a flexible, tag-based routing system — a foundational abstraction for building event-driven, stateful, and dynamic workflows.
 
-Each processor is registered under a tag. A processor receives all lines tagged with its name, processes them, and emits (tag, line) pairs that are routed to the corresponding downstream processor(s).
+🚀 Overview
+In this system, lines are routed not by fixed sequences but by tags that determine which processors handle them next. Each processor operates based on the tag it is registered with and may emit multiple new (tag, line) pairs for downstream processing.
 
-Lines tagged with 'end' are considered complete and exit the system.
+This enables:
 
-Requirements
-Lines enter with the 'start' tag.
+Dynamic routing
 
-Each tag corresponds to a registered processor.
+Fan-in & fan-out
 
-A processor:
+Support for cycles
 
-Receives lines with a specific tag
+State-machine-like behavior
 
-Emits one or more (tag, line) pairs
+📁 File Structure
 
-Routing is dynamic and supports:
+abstraction-level-6/
+│
+├── processors/
+│   ├── start.py
+│   ├── output/
+│   │   ├── end.py
+│   │   └── __init__.py
+│   ├── formatters/
+│   │   ├── general.py
+│   │   └── __init__.py
+│   ├── filters/
+│   │   ├── error.py
+│   │   ├── warn.py
+│   │   └── __init__.py
+│   └── __init__.py
+│
+├── config/
+│   └── nodes.yaml
+│
+├── input/
+│   └── input.txt
+│
+├── cli.py
+├── main.py
+├── state_engine.py
+├── requirements.txt
+└── README.md
+🛠️ How It Works
+Each line begins its journey with the start tag.
 
-Fan-out: a line may emit multiple tags
+Processors are dynamically loaded from the config (config/nodes.yaml).
 
-Fan-in: a tag may be emitted from multiple sources
+Each processor emits new (tag, line) tuples.
 
-Cycles (with optional safeguards)
+When a line is tagged with end, it exits the system.
 
-The system stops when no lines remain to be processed.
-
-Configuration Format
-Processors are defined in a config file:
+Example configuration (config/nodes.yaml):
 
 yaml
 Copy code
@@ -39,33 +64,72 @@ nodes:
   - tag: warn
     type: processors.filters.only_warn
   - tag: general
-    type: processors.formatters.snakecase
+    type: processors.formatters.general
   - tag: end
-    type: processors.output.terminal
-Design Notes
-Use a dictionary or graph (e.g., networkx.DiGraph) to map tag-to-processor routes.
+    type: processors.output.end
+🧠 Key Concepts
+Routing Engine (state_engine.py): Core engine managing state transitions.
 
-Each processor implements:
-process(lines: Iterator[str]) -> Iterator[Tuple[str, str]]
+Dynamic Tags: Lines are routed based on their current tags.
 
-Validate all emitted tags are registered.
+Fan-out: One processor can emit multiple downstream tags.
 
-Add optional loop detection or iteration limits.
+Fan-in: Multiple processors can emit the same downstream tag.
 
-Example Flow
-Line enters at 'start'
+Cycles Allowed: System supports cycles, but you can add limits or guards to prevent infinite loops.
 
-Processor emits: ('warn', line)
+⚙️ Setup Instructions
+1. 🐍 Create a Virtual Environment
+bash
+Copy code
+uv venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+3. 📦 Install Dependencies
+bash
+Copy code
+pip install -r requirements.txt
+▶️ Running the Project
+bash
+Copy code
+python main.py --config config/nodes.yaml --input input/input.txt
 
-Line goes to warn processor
 
-Processor emits: ('end', line)
+🖥️ Example Output
+Here’s how tagged lines route through processors and exit:
 
-Line exits system
 
-Goals
-Decouple routing from processors
+Copy code
+Input Line: "Error: Something failed"
+  -> start → error → end
 
-Support complex workflows with branching and loops
+Input Line: "Warning: Check this"
+  -> start → warn → end
 
-Prepare system for distributed or stateful extensions
+Input Line: "Info: All is well"
+  -> start → general → end
+  ✅ Features Checklist
+ Start → End line routing
+
+ Configurable processors via YAML
+
+ Dynamic tags and transitions
+
+ Supports fan-in and fan-out
+
+ Optional cycle guards
+
+ Modular design and CLI support
+
+📌 Reflection
+This level pushes you to think in systems, not scripts. You’ve built a foundation to handle:
+
+Conditional logic
+
+Complex workflows
+
+Potential for distributed execution
+
+🔎 Output Path
+Output is printed directly in the console by the processors.output.end processor.
+
+You can modify this processor to write to a file or database, if required.
