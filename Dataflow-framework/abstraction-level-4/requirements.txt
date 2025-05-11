@@ -1,0 +1,7 @@
+# requirements.txt for Level 4 - Stream-Based Processors
+
+# Core dependencies
+PyYAML>=6.0  # For loading pipeline.yaml
+
+# Development and testing
+pytest>=7.0  # For running tests
