@@ -1,0 +1,12 @@
+# Core requirements
+pyyaml>=6.0
+click>=8.1.0
+
+# Optional: If you use rich formatting in CLI or terminal output
+rich>=13.3.0
+
+# For type hints and development (optional)
+typing-extensions>=4.5.0
+
+# For file handling or logging if needed (optional)
+loguru>=0.7.0
