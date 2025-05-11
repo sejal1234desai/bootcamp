@@ -1,72 +1,150 @@
-Level 5 – DAG Routing and Conditional Flows
-In this level, the pipeline supports dynamic routing using a DAG (Directed Acyclic Graph). Each processor can emit tagged lines, and routing is based on these tags rather than a fixed sequence.
 
-This enables each input line to take a different path through the system depending on its content or assigned tags.
+🪢 Level 5 – DAG Routing and Conditional Flows
+Welcome to Level 5 of the pipeline processing system. In this level, you're no longer tied to a linear pipeline — instead, you're building a flexible, data-driven engine where each line takes a dynamic path through a Directed Acyclic Graph (DAG) based on tags assigned by processors.
 
-Requirements
-Each processor is defined as a node in a DAG.
+🚀 Goal
+To design a configurable and scalable DAG-based routing engine where:
 
-The system routes lines based on the (tag, line) output of each processor.
+Each processor acts as a node.
 
-The routing graph is defined in a config file.
+Routing decisions are based on tags.
 
-A processor can:
+Each line can follow a unique path through the system.
 
-Emit multiple tags (fan-out)
+Logic is defined declaratively in a config file.
 
-Receive lines from multiple processors (fan-in)
+🧩 Key Features
+✅ Tag-based conditional flows
+✅ DAG-based routing (no cycles)
+✅ Fan-out: One tag → multiple downstream processors
+✅ Fan-in: One processor receives input from multiple sources
+✅ Config-driven routing logic
+✅ Clean separation of routing and processing logic
 
-The DAG must not contain cycles.
+📁 Project Structure
+python
+Copy code
+abstraction-level-5/
+├── cli.py
+├── config.yaml           # DAG routing configuration
+├── input.txt             # Input data
+├── main.py               # Main engine to run the DAG
+├── output.txt            # Final processed output
+├── pipeline.py           # Core routing engine
+├── processor/
+│   ├── __init__.py
+│   ├── archive.py        # Stores lines to archive
+│   ├── count.py          # Counts error lines
+│   ├── format.py         # Formats general lines
+│   ├── print.py          # Prints to terminal
+│   ├── splitter.py       # Splits tags to next processors
+│   ├── tag_error.py      # Tags error lines
+│   ├── tag_warn.py       # Tags warning lines
+│   ├── tally.py          # Tally warnings
+│   └── trim.py           # Trims whitespace
+├── archive_error.txt     # Stores archived error lines
+├── README.md             # You're here!
+🛠️ How It Works
+Input lines go through the trim processor first.
 
-Processor Interface
-Each processor implements:
+Lines are tagged using processors like tag_error.py or tag_warn.py.
+
+Routing is determined based on these tags using splitter.py.
+
+Each tag points to different branches:
+
+"errors" → count, archive
+
+"warnings" → tally
+
+"general" → format, print
+
+🧠 Processor Interface
+Every processor must implement the following interface:
 
 python
 Copy code
 def process(lines: Iterator[str]) -> Iterator[Tuple[str, str]]:
     ...
-Processors receive untagged lines as input, and emit (tag, line) pairs for routing.
+Input: Iterator of raw strings
 
-Configuration Format
+Output: Iterator of (tag, line) tuples
+
+🧾 Example config.yaml
 yaml
 Copy code
 nodes:
   - name: trim
-    type: processors.base.trim
+    type: processor.trim
     next: [tagger]
 
   - name: tagger
-    type: processors.tagging.tag_error_warn
+    type: processor.splitter
     next:
       errors: [count, archive]
       warnings: [tally]
       general: [format]
 
   - name: count
-    type: processors.metrics.counter
+    type: processor.count
 
   - name: archive
-    type: processors.output.store
+    type: processor.archive
 
   - name: tally
-    type: processors.metrics.tally
+    type: processor.tally
 
   - name: format
-    type: processors.formatters.snakecase
+    type: processor.format
     next: [print]
 
   - name: print
-    type: processors.output.terminal
-Routing Rules
-The engine uses next: mappings in the config to determine downstream nodes.
+    type: processor.print
+🔄 Routing Logic
+Each processor emits tagged lines.
 
-Tags emitted by a processor must match a next: key.
+Tags are matched to the next: mapping in the config file.
 
-Routing supports branching and merging paths.
+The engine uses this mapping to forward lines to the appropriate downstream processors.
 
-Goals
-Handle conditional flows based on line content or tags.
+No cycles are allowed — this is a strict DAG.
 
-Separate processing logic from routing logic.
+✅ Supported Flows:
+Fan-out: A tag can route a line to multiple processors.
 
-Support real-world pipelines with mixed data types.
+Fan-in: Multiple processors can emit lines to the same next node.
+
+📌 Usage
+CLI
+bash
+Copy code
+python cli.py --config config.yaml --input input.txt
+Output
+Terminal output is written to output.txt
+
+Archived errors are stored in archive_error.txt
+
+✅ Checklist
+ Lines are dynamically routed based on tags
+
+ Routing is defined via config, not hardcoded
+
+ Tags like errors, warnings, general drive flow
+
+ Supports fan-in and fan-out
+
+ Config is YAML and easy to modify
+
+ Fully modular and ready for extension
+
+🤔 Reflection
+This architecture allows:
+
+Routing based on content, not structure
+
+Future use cases like error retries, parallel processing, conditional branching
+
+Decoupled design that scales and is easy to test
+
+📦 Next Steps
+Move on to Level 6 to implement State-Based Routing with cycles and fully dynamic tag transitions, enabling even more flexible systems like workflow engines or real-time
