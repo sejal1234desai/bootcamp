@@ -212,6 +212,10 @@ OutPut Pages
 
 ![Batch Ingestion Output](imgs/batch_ingestion.png)
 
+![Figure Output](imgs/figure_output.png)
+
+![Figures](imgs/figuress.png)
+
 
 
 ──────────────────────────────────────────────────────────────────────
