@@ -4,8 +4,8 @@
 ──────────────────────────────────────────────────────────────────────
 
 Project Overview
-
 ─────────────────
+
 This project extracts figure captions, metadata, and biological entities from scientific research articles using PubMed Central APIs. The system is designed to be extensible, production-ready, and valuable for both researchers and developers.
 
 
