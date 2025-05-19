@@ -1,0 +1,92 @@
+Understanding Transactions and ACID Properties
+
+1. What are Transactions?
+A transaction is a sequence of operations performed as a single logical unit of work. These operations must either all succeed together or all fail together, ensuring the database remains consistent.
+
+Example: Transferring money from one bank account to another involves withdrawing from one account and depositing into another. Both must happen; if one fails, the entire transaction should be canceled.
+
+
+2. What are ACID Properties?
+ACID stands for Atomicity, Consistency, Isolation, Durability — key properties that guarantee reliable transaction processing.
+
+Atomicity: The whole transaction happens, or none of it happens.
+
+Consistency: The database remains in a valid state before and after the transaction.
+
+Isolation: Concurrent transactions do not affect each other’s operations.
+
+Durability: Once a transaction commits, its changes are permanent, even in case of a crash.
+
+3. Suppose You Do Not Have Transactions. Is That System Useful? Why?
+Without transactions, the system cannot guarantee data integrity during multiple operations. For example:
+
+If money is withdrawn but not deposited in the transfer example, money disappears.
+
+Partial updates can corrupt data, causing inconsistent or incorrect results.
+
+Such a system is risky and generally not useful for critical applications like banking, inventory management, etc.
+
+4. What Properties Does Your File System Have?
+Most file systems provide:
+
+Durability: Data saved to disk remains even after power loss.
+
+Basic Consistency: Files have a defined structure.
+
+Limited Atomicity: Some file systems support atomic write operations but usually not complex multi-step transactions.
+
+No Isolation: Multiple users writing to the same file can cause conflicts without explicit locking.
+
+No full ACID compliance like a database system.
+
+5. Suppose You Do Not Have "A" in ACID (Atomicity). What Happens? When Is It OK?
+Without Atomicity:
+
+Partial transactions can happen.
+
+Example: If you transfer money but the withdrawal succeeds and the deposit fails, money is lost.
+
+When is it OK?
+
+For non-critical operations or idempotent actions (repeated actions don’t cause issues).
+
+Example: Logging user activity where partial loss is acceptable.
+
+6. Suppose You Do Not Have "C" in ACID (Consistency). What Happens? When Is It OK?
+Without Consistency:
+
+Database may enter invalid states.
+
+Example: Bank account balance can become negative if rules aren’t enforced.
+
+When is it OK?
+
+Systems where eventual consistency is acceptable, like social media timelines.
+
+Example: Facebook posts may appear out of order briefly but get corrected later.
+
+7. Suppose You Do Not Have "I" in ACID (Isolation). What Happens? When Is It OK?
+Without Isolation:
+
+Concurrent transactions interfere.
+
+Example: Two users booking the last seat at the same time, causing double booking.
+
+When is it OK?
+
+Systems prioritizing speed over perfect isolation.
+
+Example: Analytics systems where some data overlap is tolerable.
+
+8. Suppose You Do Not Have "D" in ACID (Durability). What Happens? When Is It OK?
+Without Durability:
+
+Committed transactions may be lost on crash.
+
+Example: After payment confirmation, if system crashes, payment info may vanish.
+
+When is it OK?
+
+Systems where data loss is acceptable or data can be reconstructed.
+
+Example: Cache systems or temporary session data.
