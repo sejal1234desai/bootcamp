@@ -98,9 +98,12 @@ API_KEY=supersecretapikey
  Demo (Terminal Walkthrough)
 
 Experience the app through terminal-based demos recorded via asciinema:
- 
-🔹 Links:  https://asciinema.org/a/Zpo3bzfFZdqB7Jy73roy8Q4Zh
-           https://asciinema.org/a/tPKzW7cD5tvabK1R0KzIMzZMo
+
+🔹Asciinema Links
+ - [Recording 1](https://asciinema.org/a/Zpo3bzfFZdqB7Jy73roy8Q4Zh)
+
+
+- [Recording 2](https://asciinema.org/a/tPKzW7cD5tvabK1R0KzIMzZMo)
 
 🔹 Ingesting PMC IDs
 
