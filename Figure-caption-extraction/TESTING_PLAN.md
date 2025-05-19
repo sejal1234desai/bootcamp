@@ -22,6 +22,7 @@ Phase 3: Batch processing and performance
 - Test error handling for invalid IDs or network issues.
 
 ──────────────────────────────────────────────────────────────────────
+
 ➤ FUNCTIONALITY TESTING
 
 - Confirm that submitting a list of paper IDs triggers data ingestion correctly.  
@@ -31,6 +32,7 @@ Phase 3: Batch processing and performance
 - Validate that admin configurations (like storage location, logging level) are respected.
 
 ──────────────────────────────────────────────────────────────────────
+
 ➤ SECURITY TESTING (API KEY)
 
 - Ensure all API endpoints require a valid API key for access.  
@@ -39,6 +41,7 @@ Phase 3: Batch processing and performance
 - Simulate unauthorized attempts and ensure system logs security-relevant events.
 
 ──────────────────────────────────────────────────────────────────────
+
 ➤ PERFORMANCE TESTING
 
 - Measure response time for ingestion jobs with varying batch sizes (small: 5 IDs, medium: 50 IDs, large: 200+ IDs).  
@@ -47,6 +50,7 @@ Phase 3: Batch processing and performance
 - Test graceful failure handling when API rate limits or external service errors occur.
 
 ──────────────────────────────────────────────────────────────────────
+
 ➤ MOCKED AND REAL DATA TESTING
 
 - Use mocked API responses to test ingestion logic without relying on live external APIs.  
