@@ -201,7 +201,9 @@ SAMPLE OUTPUT (JSON)
 
 OutPut Pages 
 
-imgs/firstpage.png
+/imgs/first_page.png
+
+/imgs/batch_ingestion.png
 
 ──────────────────────────────────────────────────────────────────────
 
