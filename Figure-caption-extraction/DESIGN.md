@@ -13,6 +13,7 @@ for a production-ready system that extracts figure captions and
 related metadata from scientific publications.
 
 ──────────────────────────────────────────────────────────────────────
+
 ➤ SYSTEM ARCHITECTURE OVERVIEW
 The system consists of four main layers:
 
@@ -47,6 +48,7 @@ The system consists of four main layers:
           return FigureData(...)  
 
 ──────────────────────────────────────────────────────────────────────
+
 ➤ KEY COMPONENTS AND INTERACTIONS
 
 ┌───────────────────┐          ┌───────────────────────┐
@@ -69,6 +71,7 @@ The system consists of four main layers:
                                 └───────────────────┘
 
 ──────────────────────────────────────────────────────────────────────
+
 ➤ DEPENDENCIES AND JUSTIFICATIONS
 
 ➤ FastAPI
@@ -92,6 +95,7 @@ The system consists of four main layers:
 ➤ Python-dotenv
    - Manages environment configurations securely.
 ──────────────────────────────────────────────────────────────────────
+
 ➤ PostgreSQL
    - Chosen over DuckDB for production environments due to:  
      • Scalability for concurrent API and batch operations.  
@@ -100,6 +104,7 @@ The system consists of four main layers:
    - DuckDB remains an option for local testing via configuration override.  
 
 ──────────────────────────────────────────────────────────────────────
+
 ➤ DEPLOYMENT CONSIDERATIONS
 
 - The system will be containerized using Docker for portability.
@@ -110,6 +115,7 @@ The system consists of four main layers:
 - The ingestion jobs can be run interactively or in batch mode via CLI.
 
 ──────────────────────────────────────────────────────────────────────
+
 ➤ SIMPLE DEPLOYMENT DIAGRAM (ASCII)
 
   ┌───────────────┐           ┌───────────────┐
