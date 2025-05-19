@@ -1,11 +1,10 @@
 
-══════════════════════════════════════════════════════════════════════
              DESIGN DOCUMENT
 Figure Caption Extraction and Access System
 Version: 1.0
 Author: [Sejal Desai]
 
-══════════════════════════════════════════════════════════════════════
+
 
 ❖ PURPOSE
 This document describes the proposed architecture, key components,
