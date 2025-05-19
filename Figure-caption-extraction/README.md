@@ -198,6 +198,11 @@ SAMPLE OUTPUT (JSON)
   ]
 }
 
+
+OutPut Pages 
+
+imgs/firstpage.png
+
 ──────────────────────────────────────────────────────────────────────
 
 DEMO AND PRESENTATION
