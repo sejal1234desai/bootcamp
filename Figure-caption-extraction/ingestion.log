@@ -1,0 +1,122 @@
+2025-05-15 10:09:02,160 - INFO - Found 3 PMC IDs to ingest.
+2025-05-15 10:09:02,161 - INFO - [1/3] Ingesting PMC4030531...
+2025-05-15 10:09:04,547 - INFO - PMC4030531 ingested successfully.
+2025-05-15 10:09:04,548 - INFO - [2/3] Ingesting PMC7095919...
+2025-05-15 10:09:05,606 - INFO - PMC7095919 ingested successfully.
+2025-05-15 10:09:05,607 - INFO - [3/3] Ingesting PMC7294609...
+2025-05-15 10:09:06,893 - INFO - PMC7294609 ingested successfully.
+2025-05-15 10:09:06,894 - INFO - Batch ingestion completed.
+2025-05-17 04:02:47,767 - INFO - Ingested PMC4030531
+2025-05-17 04:02:48,690 - INFO - Ingested PMC7095919
+2025-05-17 04:02:49,947 - INFO - Ingested PMC7294609
+2025-05-17 06:37:11,533 - INFO - Ingested PMC4030531
+2025-05-17 06:37:15,861 - INFO - Ingested PMC7294609
+2025-05-17 10:30:45,967 - ERROR - Failed to ingest PMC12081161: name 'document' is not defined
+2025-05-17 10:30:47,717 - ERROR - Failed to ingest PMC12081155: name 'document' is not defined
+2025-05-17 10:34:15,376 - ERROR - Failed to ingest PMC12081161: name 'document' is not defined
+2025-05-17 10:34:17,032 - ERROR - Failed to ingest PMC12081155: name 'document' is not defined
+2025-05-17 10:38:44,518 - INFO - Ingested PMC12081161
+2025-05-17 10:38:46,524 - INFO - Ingested PMC12081155
+2025-05-17 10:47:01,051 - INFO - Ingested PMC12081161
+2025-05-17 10:47:02,530 - INFO - Ingested PMC12081155
+2025-05-17 14:30:26,490 - ERROR - Failed to ingest PMC12084079",: Failed to fetch BioC data: 500
+2025-05-17 14:30:27,581 - ERROR - Failed to ingest PMC"12084074",: Failed to fetch BioC data: 500
+2025-05-17 14:30:28,545 - ERROR - Failed to ingest PMC"12084056",: Failed to fetch BioC data: 500
+2025-05-17 14:30:29,454 - ERROR - Failed to ingest PMC"12084052",: Failed to fetch BioC data: 500
+2025-05-17 14:30:30,486 - ERROR - Failed to ingest PMC"12084046",: Failed to fetch BioC data: 500
+2025-05-17 14:30:31,433 - ERROR - Failed to ingest PMC"12084041",: Failed to fetch BioC data: 500
+2025-05-17 14:30:32,739 - ERROR - Failed to ingest PMC"12084036",: Failed to fetch BioC data: 500
+2025-05-17 14:30:33,772 - ERROR - Failed to ingest PMC"12084010",: Failed to fetch BioC data: 500
+2025-05-17 14:30:34,684 - ERROR - Failed to ingest PMC"12084007",: Failed to fetch BioC data: 500
+2025-05-17 14:30:35,786 - ERROR - Failed to ingest PMC"12084001": Failed to fetch BioC data: 500
+2025-05-17 14:32:42,675 - ERROR - Failed to ingest PMC12084079: Invalid JSON: Expecting value: line 1 column 2 (char 1)
+2025-05-17 14:32:43,919 - ERROR - Failed to ingest PMC12084074: Invalid JSON: Expecting value: line 1 column 2 (char 1)
+2025-05-17 14:32:44,930 - ERROR - Failed to ingest PMC12084056: Invalid JSON: Expecting value: line 1 column 2 (char 1)
+2025-05-17 14:32:45,962 - ERROR - Failed to ingest PMC12084052: Invalid JSON: Expecting value: line 1 column 2 (char 1)
+2025-05-17 14:33:50,508 - INFO - Ingested PMC12081161
+2025-05-17 14:33:51,735 - INFO - Ingested PMC12081155
+2025-05-17 14:40:45,737 - ERROR - Failed to ingest PMC12345678: Invalid JSON: Expecting value: line 1 column 2 (char 1)
+2025-05-17 14:40:46,629 - ERROR - Failed to ingest PMC12345678: Invalid JSON: Expecting value: line 1 column 2 (char 1)
+2025-05-17 14:40:47,673 - ERROR - Failed to ingest PMC23456789: Invalid JSON: Expecting value: line 1 column 2 (char 1)
+2025-05-18 04:53:19,505 - ERROR - Failed to ingest PMC12345678: HTTPSConnectionPool(host='www.ncbi.nlm.nih.gov', port=443): Max retries exceeded with url: /research/bionlp/RESTful/pmcoa.cgi/BioC_json/PMC12345678/unicode (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f3fbcc39fd0>: Failed to resolve 'www.ncbi.nlm.nih.gov' ([Errno -3] Temporary failure in name resolution)"))
+2025-05-18 04:53:29,529 - ERROR - Failed to ingest PMC12345678: HTTPSConnectionPool(host='www.ncbi.nlm.nih.gov', port=443): Max retries exceeded with url: /research/bionlp/RESTful/pmcoa.cgi/BioC_json/PMC12345678/unicode (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f3fbcbf7110>: Failed to resolve 'www.ncbi.nlm.nih.gov' ([Errno -3] Temporary failure in name resolution)"))
+2025-05-18 04:53:39,551 - ERROR - Failed to ingest PMC23456789: HTTPSConnectionPool(host='www.ncbi.nlm.nih.gov', port=443): Max retries exceeded with url: /research/bionlp/RESTful/pmcoa.cgi/BioC_json/PMC23456789/unicode (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f3fbca8c050>: Failed to resolve 'www.ncbi.nlm.nih.gov' ([Errno -3] Temporary failure in name resolution)"))
+2025-05-18 05:02:35,220 - ERROR - Failed to ingest PMC12345678: print() got an unexpected keyword argument 'exc_info'
+2025-05-18 05:02:36,446 - ERROR - Failed to ingest PMC12345678: print() got an unexpected keyword argument 'exc_info'
+2025-05-18 05:02:37,571 - ERROR - Failed to ingest PMC23456789: print() got an unexpected keyword argument 'exc_info'
+2025-05-18 05:03:41,176 - ERROR - Failed to ingest PMC12345678: print() got an unexpected keyword argument 'exc_info'
+2025-05-18 05:03:42,488 - ERROR - Failed to ingest PMC12345678: print() got an unexpected keyword argument 'exc_info'
+2025-05-18 05:03:43,501 - ERROR - Failed to ingest PMC23456789: print() got an unexpected keyword argument 'exc_info'
+2025-05-18 05:05:39,805 - ERROR - Failed to ingest PMC12345678: Invalid JSON: Expecting value: line 1 column 2 (char 1)
+2025-05-18 05:05:41,083 - ERROR - Failed to ingest PMC12345678: Invalid JSON: Expecting value: line 1 column 2 (char 1)
+2025-05-18 05:05:42,220 - ERROR - Failed to ingest PMC23456789: Invalid JSON: Expecting value: line 1 column 2 (char 1)
+2025-05-18 05:08:33,367 - INFO - Ingested PMC12345678
+2025-05-18 05:08:34,685 - INFO - Ingested PMC12345678
+2025-05-18 05:08:36,599 - INFO - Ingested PMC23456789
+2025-05-18 05:21:13,322 - ERROR - Failed to ingest PMC12345678: name 'logger' is not defined
+2025-05-18 05:21:14,406 - ERROR - Failed to ingest PMC12345678: name 'logger' is not defined
+2025-05-18 05:21:15,615 - ERROR - Failed to ingest PMC23456789: name 'logger' is not defined
+2025-05-18 05:25:58,353 - ERROR - Failed to ingest PMC12345678: name 'logger' is not defined
+2025-05-18 05:25:59,785 - ERROR - Failed to ingest PMC12345678: name 'logger' is not defined
+2025-05-18 05:26:01,118 - ERROR - Failed to ingest PMC23456789: name 'logger' is not defined
+2025-05-18 05:35:03,166 - ERROR - Failed to ingest PMC12345678: name 'logger' is not defined
+2025-05-18 05:35:04,491 - ERROR - Failed to ingest PMC12345678: name 'logger' is not defined
+2025-05-18 05:35:05,718 - ERROR - Failed to ingest PMC23456789: name 'logger' is not defined
+2025-05-18 05:38:15,368 - ERROR - Failed to ingest PMC12084079: name 'logger' is not defined
+2025-05-18 05:38:16,585 - ERROR - Failed to ingest PMC12084074: name 'logger' is not defined
+2025-05-18 05:38:17,921 - ERROR - Failed to ingest PMC12084056: name 'logger' is not defined
+2025-05-18 05:38:19,145 - ERROR - Failed to ingest PMC12084052: name 'logger' is not defined
+2025-05-18 05:47:48,345 - INFO - Ingested PMC12084079
+2025-05-18 05:47:49,456 - INFO - Ingested PMC12084074
+2025-05-18 05:47:50,676 - INFO - Ingested PMC12084056
+2025-05-18 05:47:51,802 - INFO - Ingested PMC12084052
+2025-05-18 05:48:25,588 - INFO - Ingested PMC4030531
+2025-05-18 05:48:25,597 - INFO - Ingested PMC7095919
+2025-05-18 05:48:25,600 - INFO - Ingested PMC7294609
+2025-05-18 05:53:39,262 - INFO - Ingested PMC12345678
+2025-05-18 05:53:40,614 - INFO - Ingested PMC12345678
+2025-05-18 05:53:41,645 - INFO - Ingested PMC23456789
+2025-05-18 05:54:40,906 - INFO - Ingested PMC12345678
+2025-05-18 05:54:42,136 - INFO - Ingested PMC12345678
+2025-05-18 05:54:43,246 - INFO - Ingested PMC23456789
+2025-05-18 05:55:57,922 - INFO - Ingested PMC12345678
+2025-05-18 05:55:58,939 - INFO - Ingested PMC12345678
+2025-05-18 05:56:00,372 - INFO - Ingested PMC23456789
+2025-05-18 06:05:46,958 - INFO - Ingested PMC12345678
+2025-05-18 06:05:48,378 - INFO - Ingested PMC12345678
+2025-05-18 06:05:49,711 - INFO - Ingested PMC23456789
+2025-05-18 06:06:01,691 - INFO - Ingested PMC12345678
+2025-05-18 06:06:02,923 - INFO - Ingested PMC12345678
+2025-05-18 06:06:04,250 - INFO - Ingested PMC23456789
+2025-05-18 06:06:10,293 - INFO - Ingested PMC12345678
+2025-05-18 06:06:11,619 - INFO - Ingested PMC12345678
+2025-05-18 06:06:12,851 - INFO - Ingested PMC23456789
+2025-05-18 07:25:19,199 - INFO - Ingested PMC8123456
+2025-05-18 07:25:20,541 - INFO - Ingested PMC8123457
+2025-05-18 07:25:22,288 - INFO - Ingested PMC8123458
+2025-05-18 09:29:00,884 - INFO - Ingested PMC8123456
+2025-05-18 09:29:00,888 - INFO - Ingested PMC8123457
+2025-05-18 09:29:00,893 - INFO - Ingested PMC8123458
+2025-05-18 10:05:58,102 - INFO - Ingested PMC4030531
+2025-05-18 10:05:58,110 - INFO - Ingested PMC7294609
+2025-05-18 13:28:54,686 - INFO - Ingested PMC8123456
+2025-05-18 13:28:54,692 - INFO - Ingested PMC8123457
+2025-05-18 13:28:54,697 - INFO - Ingested PMC8123458
+2025-05-18 14:17:15,045 - INFO - Ingested PMC7002734
+2025-05-18 14:17:15,047 - INFO - Ingested PMC6759573
+2025-05-18 14:17:15,048 - INFO - Ingested PMC6892345
+2025-05-18 14:31:40,177 - INFO - Ingested PMC7002734
+2025-05-18 14:31:40,178 - INFO - Ingested PMC6759573
+2025-05-18 14:31:40,180 - INFO - Ingested PMC6892345
+2025-05-18 16:34:48,904 - INFO - Ingested PMC7002734
+2025-05-18 16:34:48,909 - INFO - Ingested PMC6759573
+2025-05-18 16:34:48,912 - INFO - Ingested PMC6892345
+2025-05-19 03:31:02,737 - INFO - Ingested PMC7002734
+2025-05-19 03:31:02,740 - INFO - Ingested PMC6759573
+2025-05-19 03:31:02,741 - INFO - Ingested PMC6892345
+2025-05-19 03:41:04,359 - INFO - Ingested PMC7002734
+2025-05-19 03:41:04,361 - INFO - Ingested PMC6759573
+2025-05-19 03:41:04,362 - INFO - Ingested PMC6892345
+2025-05-19 09:38:16,379 - INFO - Ingested PMC7002734
+2025-05-19 09:38:16,384 - INFO - Ingested PMC6759573
+2025-05-19 09:38:16,387 - INFO - Ingested PMC6892345
